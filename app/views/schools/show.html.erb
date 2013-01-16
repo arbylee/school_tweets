@@ -1,0 +1,9 @@
+<%= @school.name %>
+<ul>
+  <% @tweets.each do |tweet| %>
+    <li>
+      <div>At <%= tweet.created_at %>, <%= tweet.screen_name %> said:</div>
+      <div><%= tweet.text %></div>
+    </li>
+  <% end %>
+</ul>

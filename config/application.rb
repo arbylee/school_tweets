@@ -9,6 +9,11 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+CONSUMER_SECRET = ENV['CONSUMER_SECRET']
+CONSUMER_KEY = ENV['CONSUMER_KEY']
+OAUTH_TOKEN = ENV['OAUTH_TOKEN']
+OAUTH_SECRET = ENV['OAUTH_SECRET']
+
 module SchoolTweets
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
