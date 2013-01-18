@@ -50,7 +50,9 @@ SchoolTweets::Application.routes.draw do
   # just remember to delete public/index.html.
 
   resources :schools, only: [:index, :show]
-  root :to => 'schools#index'
+  match 'tweet_maps' => 'tweet_maps#index'
+  match 'tweets' => 'tweets#show'
+  root :to => 'tweet_maps#index'
 
   # See how all your routes lay out with "rake routes"
 

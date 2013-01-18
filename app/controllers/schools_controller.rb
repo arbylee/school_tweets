@@ -1,6 +1,8 @@
 class SchoolsController < ApplicationController
+  respond_to :html, :json
   def index
     @schools = School.order("name").all
+    respond_with @schools
   end
 
   def show
