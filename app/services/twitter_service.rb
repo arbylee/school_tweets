@@ -19,7 +19,6 @@ class TwitterService
     body = JSON.parse(response.body)
     statuses = body['statuses']
     statuses.collect do |status|
-      next unless Time.parse(status['created_at']) > 1.day.ago
       Tweet.new(screen_name: status['user']['screen_name'], text: status['text'], created_at: Time.parse(status['created_at']).strftime('%B %d, %Y %l:%M%p'))
     end.compact
   end
